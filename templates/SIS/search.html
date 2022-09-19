@@ -44,6 +44,8 @@
         <p class="card-text"><b>Phone No :</b> {{ student.phone }}</p>
         <p class="card-text"><b>Email :</b>{{ student.email }}</p>
         <p class="card-text"><b>department :</b>{{ student.department }}</p>
+        <a href="{% url 'update' student.studentID %}" class="btn btn-light">update</a>
+        <a href="{% url 'delete' student.studentID %}" class="btn btn-light">delete</a>
     </div>
 </div>
 {% endfor %}

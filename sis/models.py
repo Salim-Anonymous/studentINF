@@ -19,7 +19,6 @@ YEAR_CHOICES = (
 
 
 class Student(models.Model):
-    profilePic = models.ImageField(upload_to='profilePic/', blank=True)
     name = models.CharField(max_length=100)
     studentID = models.CharField(max_length=8, primary_key=True)
     email = models.EmailField(max_length=100)
@@ -32,5 +31,4 @@ class Student(models.Model):
         return self.studentID
 
 
-class Search(models.Model):
-    studentID = models.CharField(max_length=8, primary_key=True)
+

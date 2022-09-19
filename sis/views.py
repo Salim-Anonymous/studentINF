@@ -2,40 +2,40 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView
 
 from .forms import StudentForm
-from .models import Student, Search
+from .models import Student
 
 
 # Create your views here.
 
 def add_student(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = StudentForm(request.POST)
         if form.is_valid():
             form.save()
-        return render(request, 'SIS/index.html')
+            return redirect('home')
     else:
         form = StudentForm()
-
     return render(request, 'SIS/addStudent.html', {'form': form})
 
 
 def remove_student(request, pk):
     student = Student.objects.get(pk=pk)
     student.delete()
-    return render(request, 'SIS/index.html')
+    return redirect('home')
 
 
-# def edit_student(request, pk):
-#     student = Student.objects.get(pk=pk)
-#     if request.method == 'POST':
-#         form = StudentForm(request.POST, instance=student)
-#         if form.is_valid():
-#             form.save()
-#         return render(request, 'SIS/index.html')
-#     else:
-#         form = StudentForm(instance=student)
-#
-#     return render(request, 'SIS/editStudent.html', {'form': form})
+def edit_student(request, pk):
+    student = Student.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = StudentForm(request.POST, instance=student)
+        if form.is_valid():
+            form.save()
+        return redirect('home')
+    else:
+        form = StudentForm(instance=student)
+
+    return render(request, 'SIS/editStudent.html', {'form': form})
+
 
 def index(request):
     students = Student.objects.all()
@@ -54,7 +54,7 @@ class HomepageView(ListView):
 
 class SearchResultView(ListView):
     model = Student
-    template_name = 'SIS/search.html'
+    template_name = 'SIS/index.html'
 
     def get_queryset(self):
         query = self.request.GET.get('q')
