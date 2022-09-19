@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Result</title>
+    <style>
+        .card {
+            width: 300px;
+            height: 500px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            margin: 0 auto;
+            margin-top: 50px;
+            padding: 20px;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<h1>Result</h1>
+{% load static %}
+{% for student in object_list %}
+    <div class="card" >
+    <img src="{% static 'image/cute-and-funny-little-cat-cartoon-illustration-vector.jpg' %}" class="card-img-top"
+         alt="...">
+    <!-- <svg class="card-img-top" id="iconAcc" xmlns="http://www.w3.org/2000/svg"  width="100" height="100" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 26 26">
+         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+         <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+       </svg> -->
+    <div class="card-body">
+        <h5 class="card-title">{{ student.studentID }}</h5>
+        <p class="card-text"><b>Name :</b> {{ student.name }}</p>
+        <p class="card-text"><b>Year :</b> {{ student.year }}</p>
+        <p class="card-text"><b>Date Of Birth :</b> {{ student.dob }}</p>
+        <p class="card-text"><b>Phone No :</b> {{ student.phone }}</p>
+        <p class="card-text"><b>Email :</b>{{ student.email }}</p>
+        <p class="card-text"><b>department :</b>{{ student.department }}</p>
+    </div>
+</div>
+{% endfor %}
+</body>
+</html>
