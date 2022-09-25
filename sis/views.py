@@ -60,3 +60,4 @@ class SearchResultView(ListView):
         query = self.request.GET.get('q')
         object_list = Student.objects.filter(studentID__icontains=query)
         return object_list
+

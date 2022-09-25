@@ -25,11 +25,13 @@
             </div>
         </div>
     <br><br>
-        <div class="cardGroup row-cols-6">
+        <div class=" card-group">
             {% if object_list %}
+            
                 {% for student in object_list %}
-                    <div class="card col-sm-3">
-                        <img src="{% static 'image/cute-and-funny-little-cat-cartoon-illustration-vector.jpg' %}"
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="{% static 'image/21104.png' %}"
                              class="card-img-top"
                              alt="...">
                         <!-- <svg class="card-img-top" id="iconAcc" xmlns="http://www.w3.org/2000/svg"  width="100" height="100" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 26 26">
@@ -44,8 +46,9 @@
                             <p class="card-text"><b>Phone No :</b> {{ student.phone }}</p>
                             <p class="card-text"><b>Email :</b>{{ student.email }}</p>
                             <p class="card-text"><b>department :</b>{{ student.department }}</p>
-                        </div>
                     </div>
+                </div>
+                </div>
                     &nbsp; &nbsp;
                 {% endfor %}
             {% else %}

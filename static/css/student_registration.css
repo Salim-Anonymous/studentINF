@@ -6,10 +6,30 @@
     border-radius: 10px;
     border: 1px solid black;
     width: 25vw;
+    color:white;
     margin-left:35vw;
     height:80vh;
     margin-top: 10vh;
-    background-color: rgb(113, 154, 220);
+    background-color: rgb(25, 74, 119);
+    padding-right: 3%;
+    padding-left: 3%;
+    padding-top: 3%;
+}
+.login_form{
+    box-shadow: 0 0 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    color:white;
+    font-size: 20px;
+    width: 25vw;
+    margin-left:35vw;
+    height:40vh;
+    margin-top: 10vh;
+    background-color: rgb(25, 74, 119);
+    padding-right: 3%;
+    padding-left: 3%;
+    padding-top: 4%;
+
 }
 
 .myForm{
